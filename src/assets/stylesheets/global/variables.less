@@ -1,0 +1,31 @@
+@white: #fff;
+@black: #000;
+
+@font_color: lighten(@black, 40%);
+@placeholder_color: lighten(@black, 60%);
+@hover_color: @black;
+
+@hover_state_backgorund: lighten(@black, 90%);
+
+@border_radius: 6px;
+
+@font_size: 12px;
+@font_weight_normal: 300;
+
+
+.placeholder_prefixer(@color: inherit, @visibility: visible) {
+	&::placeholder {
+		color: @color;
+		visibility: @visibility;
+	}
+
+	&:-ms-input-placeholder {
+		color: @color;
+		visibility: @visibility;
+	}
+
+	&::-ms-input-placeholder {
+		color: @color;
+		visibility: @visibility;
+	}
+}
