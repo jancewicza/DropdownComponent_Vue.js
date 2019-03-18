@@ -3,7 +3,7 @@
         <div>
             <SearchInput 
                 :inputPlaceholder="dropdown.inputPlaceholder"
-                @searchInputClicked="toggleOptionList"
+                @searchInputClicked="setOptionListVisibility"
                 @updateQuery="updateTransportDropdownQuery"
                 :query="query"
                 :name="dropdown.name">
@@ -66,10 +66,10 @@
 
             optionSelected(query) {
                 this.updateTransportDropdownQuery(query);
-                this.toggleOptionList(false);
+                this.setOptionListVisibility(false);
             },
 
-            toggleOptionList(visible) {
+            setOptionListVisibility(visible) {
                 this.optionListOpened = visible;
             },
 
@@ -81,7 +81,7 @@
                 const insideDropdown = document.querySelector('.dropdown-component div').contains(event.target);
 
                 if (!insideDropdown) {
-                    this.toggleOptionList(false);
+                    this.setOptionListVisibility(false);
                 }
             }
         },
